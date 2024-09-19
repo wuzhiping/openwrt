@@ -1,5 +1,5 @@
 # openwrt
-https://openwrt.org/
+[https://openwrt.org/](https://post.smzdm.com/p/arqxqm8q/)
 
 * ifconfig eno1 promisc
 *  docker network create -d macvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=eno1 openwrt_net
