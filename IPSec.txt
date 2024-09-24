@@ -1,4 +1,4 @@
-A.替换源
+A.替换源 (pi 4b+)
 src/gz openwrt_core file:///www/snapshots/targets/bcm27xx/bcm2711/packages
 src/gz openwrt_base https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a72/base
 src/gz openwrt_luci https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a72/luci
