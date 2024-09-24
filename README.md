@@ -1,6 +1,8 @@
 # openwrt
 [https://openwrt.org/](https://post.smzdm.com/p/arqxqm8q/)
 
+# https://firmware-selector.immortalwrt.org
+
 * ifconfig eno1 promisc
 *  docker network create -d macvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=eno1 openwrt_net
 *  sudo docker run --restart always  --name openwrt  -d --network openwrt_net --privileged shawoo/openwrt /sbin/init
