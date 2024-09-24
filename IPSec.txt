@@ -1,0 +1,41 @@
+A.替换源
+src/gz openwrt_core file:///www/snapshots/targets/bcm27xx/bcm2711/packages
+src/gz openwrt_base https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a72/base
+src/gz openwrt_luci https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a72/luci
+src/gz openwrt_packages https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a72/packages
+src/gz openwrt_routing https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a72/routing
+src/gz openwrt_telephony https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a72/telephony
+
+B.安装pkg
+opkg update
+opkg install strongswan-default
+
+C.配置IPsec
+https://blog.csdn.net/u013331811/article/details/105805248
+
+root@OpenWrt:/etc# mv ipsec.conf ipsec.conf.bak 
+
+config setup
+conn tamz
+  keyexchange=ikev1
+  aggressive=yes #野蛮模式
+  left=111.222.203.115 #本端IP
+  right=222.111.105.103 #对端IP
+  leftsubnet=192.168.1.0/24 #本端子网
+  leftauth=psk
+  rightauth=psk
+  rightsubnet=11.11.11.0/27 #对端子网
+  auto=start
+  leftid=MOON #本端FQDN
+  rightid=SUN #对端FQDN
+  ike=des-md5-modp1024 #  P1提议
+  esp=des-md5-modp1024 #P2提议
+  lifetime=3600
+  ikelifetime=10800
+  type=tunnel
+
+
+cat /etc/ipsec.secrets 
+# /etc/ipsec.secrets - strongSwan IPsec secrets file
+111.222.203.115 222.111.105.103 : PSK "123456"
+: PSK "123456"
