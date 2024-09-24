@@ -1,4 +1,4 @@
-A.Ìæ»»Ô´
+A.æ›¿æ¢æº
 src/gz openwrt_core file:///www/snapshots/targets/bcm27xx/bcm2711/packages
 src/gz openwrt_base https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a72/base
 src/gz openwrt_luci https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a72/luci
@@ -6,11 +6,14 @@ src/gz openwrt_packages https://downloads.immortalwrt.org/releases/packages-18.0
 src/gz openwrt_routing https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a72/routing
 src/gz openwrt_telephony https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a72/telephony
 
-B.°²×°pkg
+B.å®‰è£…pkg
 opkg update
 opkg install strongswan-default
 
-C.ÅäÖÃIPsec
+C.é…ç½®IPsec
+
+https://forum.openwrt.org/t/setting-up-ipsec-vpn-with-strongswan-and-swanctl-on-openwrt/195167
+
 https://blog.csdn.net/u013331811/article/details/105805248
 
 root@OpenWrt:/etc# mv ipsec.conf ipsec.conf.bak 
@@ -18,18 +21,18 @@ root@OpenWrt:/etc# mv ipsec.conf ipsec.conf.bak
 config setup
 conn tamz
   keyexchange=ikev1
-  aggressive=yes #Ò°ÂùÄ£Ê½
-  left=111.222.203.115 #±¾¶ËIP
-  right=222.111.105.103 #¶Ô¶ËIP
-  leftsubnet=192.168.1.0/24 #±¾¶Ë×ÓÍø
+  aggressive=yes #é‡è›®æ¨¡å¼
+  left=111.222.203.115 #æœ¬ç«¯IP
+  right=222.111.105.103 #å¯¹ç«¯IP
+  leftsubnet=192.168.1.0/24 #æœ¬ç«¯å­ç½‘
   leftauth=psk
   rightauth=psk
-  rightsubnet=11.11.11.0/27 #¶Ô¶Ë×ÓÍø
+  rightsubnet=11.11.11.0/27 #å¯¹ç«¯å­ç½‘
   auto=start
-  leftid=MOON #±¾¶ËFQDN
-  rightid=SUN #¶Ô¶ËFQDN
-  ike=des-md5-modp1024 #  P1ÌáÒé
-  esp=des-md5-modp1024 #P2ÌáÒé
+  leftid=MOON #æœ¬ç«¯FQDN
+  rightid=SUN #å¯¹ç«¯FQDN
+  ike=des-md5-modp1024 #  P1æè®®
+  esp=des-md5-modp1024 #P2æè®®
   lifetime=3600
   ikelifetime=10800
   type=tunnel
