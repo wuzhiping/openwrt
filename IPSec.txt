@@ -6,6 +6,17 @@ src/gz openwrt_packages https://downloads.immortalwrt.org/releases/packages-18.0
 src/gz openwrt_routing https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a72/routing
 src/gz openwrt_telephony https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a72/telephony
 
+src/gz openwrt_core file:///www/snapshots/targets/bcm27xx/bcm2710/packages
+src/gz openwrt_base https://downloads.openwrt.org/releases/18.06.4/packages/aarch64_cortex-a53/base
+#src/gz openwrt_luci https://downloads.immortalwrt.org/releases/packages-18.06-k5.4/aarch64_cortex-a53/luci
+#src/gz openwrt_luci https://downloads.immortalwrt.org/releases/23.05.0/packages/aarch64_cortex-a53/luci
+src/gz openwrt_luci https://downloads.openwrt.org/releases/18.06.4/packages/aarch64_cortex-a53/luci
+src/gz openwrt_packages https://downloads.openwrt.org/releases/18.06.4/packages/aarch64_cortex-a53/packages
+src/gz openwrt_routing https://downloads.openwrt.org/releases/18.06.4/packages/aarch64_cortex-a53/routing
+src/gz openwrt_telephony https://downloads.openwrt.org/releases/18.06.4/packages/aarch64_cortex-a53/telephony
+
+
+
 B.安装pkg
 opkg update
 opkg install strongswan-default
