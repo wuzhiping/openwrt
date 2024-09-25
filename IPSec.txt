@@ -17,7 +17,7 @@ src/gz openwrt_telephony https://downloads.openwrt.org/releases/18.06.4/packages
 
 
 
-B.安装pkg
+B.安装pkg 5.6.3-3
 opkg update
 opkg install strongswan-default
 
